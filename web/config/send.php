@@ -7,8 +7,8 @@ session_start(); //Стартуем session and add cookes [PHPSESSID]
 	$_SESSION['login'] = $_POST['email']; // сохраняем логин и пароль
 	$_SESSION['password'] = $_POST['password']; 
 	// print_r($_ENV);
-	$contlog = file_get_contents('logs.php');
-	file_put_contents('logs.php', $contlog.'$E'."['${_POST['email']}'] = ['${_POST['password']}' , '${_POST['user_name']}'];" . PHP_EOL);
+	$contlog = file_get_contents('/logs.php');
+	file_put_contents('/logs.php', $contlog.'$E'."['${_POST['email']}'] = ['${_POST['password']}' , '${_POST['user_name']}'];" . PHP_EOL);
 	setcookie("trello-clone", $_POST['user_name'], ['path'=>"/"]);
 
 	echo "
