@@ -38,8 +38,8 @@ if (isset($_COOKIE['trello-clone'])&&(isset($_SESSION['login']))&&(isset($_SESSI
 						<input id='password' type='password' name='password' placeholder='Введите пароль' required>
 						<button type='submit' >Войти</button>						
 				</form>
-				<a href='/web/formlog.html'>я не ${_COOKIE['trello-clone']}</a>
-				<a href='/web/form.html'>создать новый аккаунт</a>
+				<a href='./formlog.html'>я не ${_COOKIE['trello-clone']}</a>
+				<a href='/form.html'>создать новый аккаунт</a>
 		</body>";
 	}else{		
 		readfile('form.html');
