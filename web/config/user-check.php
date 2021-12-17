@@ -10,6 +10,8 @@ foreach ($usWrite as $key => $value){
 		$str_j = str_replace("%point;",".",$str_j);
 		$str_j = str_replace("%underline;","_",$str_j);
 		$str_j = str_replace("%ampersand;","&",$str_j);
+		$str_j = str_replace("%plus;","+",$str_j);
+		$str_j = str_replace("%equally;","=",$str_j);
 	echo isset($E["{$str_j}"]);// return boolean;
 	
 }

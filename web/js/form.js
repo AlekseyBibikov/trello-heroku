@@ -37,16 +37,16 @@ document.querySelectorAll('input').forEach(x=>x.addEventListener(
 				let passcheck = document.querySelector("#pasput").value;
 				let check = document.querySelectorAll("input")[4];
 				if ((pass === "")||(passcheck === "")){				
-					<!-- document.querySelector('.checkon').style.display = "none"; -->
-					<!-- document.querySelector('.checkoff').style.display = "none"; -->
 					check.checked = false;
+					// document.querySelector('.checkon').style.display = "none";
+					// document.querySelector('.checkoff').style.display = "none";
 				}else if(pass === passcheck){
-					<!-- document.querySelector('.checkon').style.display = "block"; -->
-					<!-- document.querySelector('.checkoff').style.display = "none";			 -->
 					check.checked = true;
+					// document.querySelector('.checkon').style.display = "block";
+					// document.querySelector('.checkoff').style.display = "none";
 				}else{
-					<!-- document.querySelector('.checkon').style.display = "none"; -->
-					<!-- document.querySelector('.checkoff').style.display = "block";			 -->
 					check.checked = false;
+					// document.querySelector('.checkon').style.display = "none";
+					// document.querySelector('.checkoff').style.display = "block";
 				}
 			}

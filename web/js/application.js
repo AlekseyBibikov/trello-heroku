@@ -48,6 +48,9 @@ let str_j = json;
 			str_j = str_j.replace(".", "%point;");
 			str_j = str_j.replace("_", "%underline;");
 			str_j = str_j.replace("&", "%ampersand;");
+			str_j = str_j.replace("+", "%plus;");
+			str_j = str_j.replace("=", "%equally;");
+			
 		i--;
 		}
 		const request = new XMLHttpRequest();
@@ -82,16 +85,14 @@ let str_j = json;
 			request.addEventListener("readystatechange", () => {
 				if (request.readyState === 4 && request.status === 200){
 					const str_j = request.responseText;
-					console.log("Индекс строки: 'ошибки file_get_contents(поиск по файлам json)'" +str_j.search(/(\bWarning.*)(\bfile_get_content.*)(\/json-lib\/)/))
 					console.log(str_j);
-					if ((str_j.search(/(\bWarning.*)(\bfile_get_content.*)(\/json-lib\/)/) !== -1)){
-						Application.save();
+					if ((str_j.search(/^{.*}$/) !== -1)){
+						const obj = JSON.parse(str_j);
+						localStorage.setItem("trello", JSON.stringify(obj));
 						Application.load();
 					}else{
-					console.log(str_j);
-					const obj = JSON.parse(str_j);
-					localStorage.setItem("trello", JSON.stringify(obj));
-					Application.load();
+						Application.save();
+						Application.load();
 					}
 				}
 			});
