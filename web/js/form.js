@@ -13,8 +13,8 @@ let i = 5;
 		i--;
 	}
 	const request = new XMLHttpRequest();
-	request.open("GET", "../config/user-check.php?" + usWrite);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.open("GET", "/web/config/user-check.php?" + usWrite);
+	request.setRequestHeader("Content-type", "application/x-www-form-url");
 	request.addEventListener("readystatechange", () => {
 		if (request.readyState === 4 && request.status === 200){
 			const Boolean = request.responseText;
