@@ -17,7 +17,7 @@ foreach($array as $key => $value){
 		$str_j = str_replace("%ampersand;","&",$str_j);
 		$str_j = str_replace("%plus;","+",$str_j);
 		$str_j = str_replace("%equally;","=",$str_j);
-		print_r($str_j);
+		// print_r($str_j);
 	// save in file {email}.json;
 		file_put_contents("./json-lib/{$_SESSION['login']}.json" ,"{$str_j}");
 		echo file_get_contents("./json-lib/{$_SESSION['login']}.json");

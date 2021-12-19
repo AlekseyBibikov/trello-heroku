@@ -10,11 +10,11 @@ include "./logs.php";
 	$contlog = file_get_contents('./logs.php');
 	file_put_contents('./logs.php', $contlog.'$E'."['${_POST['email']}'] = ['${_POST['password']}' , '${_POST['user_name']}'];" . PHP_EOL);
 	setcookie("trello-clone", $_POST['user_name'], ['path'=>"/"]);
-	$include_path = ini_get('include_path');
-	echo "'${contlog}' </br>";
-	echo "${include_path} . </br>";
-	print_r($E);
-	
+	$contlog2 = file_get_contents('./logs.php');
+
+	echo "${contlog}";//контент перезаписывает файла logs.php
+	print_r($E);//но в переменную массива $E данные не поподают.
+	echo "'${contlog2}'";
 	// "
 	// <!DOCTYPE html>
 	// <html>
