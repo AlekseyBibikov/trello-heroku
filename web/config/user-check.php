@@ -12,7 +12,6 @@ foreach ($usWrite as $key => $value){
 		$str_j = str_replace("%ampersand;","&",$str_j);
 		$str_j = str_replace("%plus;","+",$str_j);
 		$str_j = str_replace("%equally;","=",$str_j);
-print_r($E);
 	 echo isset($E["{$str_j}"]);// return boolean;
 	
 }
