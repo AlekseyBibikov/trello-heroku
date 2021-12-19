@@ -1,7 +1,8 @@
 <?php
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
-include "./logs.php";
+
+include "logs.php";
 try {
 if (!isset($E["${_POST['email']}"])){
 	throw new Exception ('Неверный логин или пароль.');

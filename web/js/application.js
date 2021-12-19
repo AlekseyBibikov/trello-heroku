@@ -54,7 +54,7 @@ let str_j = json;
 		i--;
 		}
 		const request = new XMLHttpRequest();
-		request.open("GET", "/config/json-check.php?"+str_j, true);
+		request.open("GET", "./config/json-check.php?"+str_j, true);
 		request.setRequestHeader("Content-type", "application/x-www-form-url");
 		request.addEventListener("readystatechange", () => {
 			if (request.readyState === 4 && request.status === 200){
@@ -80,7 +80,7 @@ let str_j = json;
 		//app ищет данные в браузере если их нет, то отправляет запрос на поиск по файлам .json;
 		if (!localStorage.getItem("trello")){
 			const request = new XMLHttpRequest();
-			request.open("GET", "/config/json-check.php?get", true);
+			request.open("GET", "./config/json-check.php?get", true);
 			request.setRequestHeader("Content-type", "application/x-www-form-url");
 			request.addEventListener("readystatechange", () => {
 				if (request.readyState === 4 && request.status === 200){
