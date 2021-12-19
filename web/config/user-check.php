@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
-include "logs.php";
+include "./logs.php";
 $usWrite = $_GET; // Запрос браузера приходил в ключе ARRAY;
 foreach ($usWrite as $key => $value){
 		$str_j = str_replace("_"," ",$key);
@@ -12,6 +12,7 @@ foreach ($usWrite as $key => $value){
 		$str_j = str_replace("%ampersand;","&",$str_j);
 		$str_j = str_replace("%plus;","+",$str_j);
 		$str_j = str_replace("%equally;","=",$str_j);
-	echo isset($E["{$str_j}"]);// return boolean;
+print_r($E);
+	 echo isset($E["{$str_j}"]);// return boolean;
 	
 }

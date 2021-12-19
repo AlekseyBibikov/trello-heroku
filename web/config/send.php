@@ -26,7 +26,7 @@ session_start(); //Стартуем session and add cookes [PHPSESSID]
 		<body>
 			<div class='container'>
 				<div style='text-align:center; color:white; font-weight:bold'>
-					<h1>Приветствую вас, ${_POST['user_name']}{$contlog}.</h1>
+					<h1>Приветствую вас, {$contlog}.</h1>
 					<span>Вы зарегестрировались в планировщике задач. Для продолжения нажмите START</span>
 					<a href='../trello-clone.html' style='width:60px; background-color:#0af15f; display:block; margin:10px auto; padding:5px; font-family:auto;'>START</a>
 				</div>

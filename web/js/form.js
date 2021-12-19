@@ -18,6 +18,7 @@ let i = 5;
 	request.addEventListener("readystatechange", () => {
 		if (request.readyState === 4 && request.status === 200){
 			const Boolean = request.responseText;
+			console.log(Boolean);
 			if (Boolean){
 				document.querySelectorAll('input')[1].value="";				
 				alert("Пользователь с такой почтой уже существует!");
