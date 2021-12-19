@@ -7,8 +7,8 @@ session_start(); //Стартуем session and add cookes [PHPSESSID]
 	$_SESSION['login'] = $_POST['email']; // сохраняем логин и пароль
 	$_SESSION['password'] = $_POST['password']; 
 	// print_r($_ENV);
-	$contlog = file_get_contents('/logs.php');
-	file_put_contents('/logs.php', $contlog.'$E'."['${_POST['email']}'] = ['${_POST['password']}' , '${_POST['user_name']}'];" . PHP_EOL);
+	$contlog = file_get_contents('./logs.php');
+	file_put_contents('./logs.php', $contlog.'$E'."['${_POST['email']}'] = ['${_POST['password']}' , '${_POST['user_name']}'];" . PHP_EOL);
 	setcookie("trello-clone", $_POST['user_name'], ['path'=>"/"]);
 
 	echo "
@@ -26,7 +26,7 @@ session_start(); //Стартуем session and add cookes [PHPSESSID]
 		<body>
 			<div class='container'>
 				<div style='text-align:center; color:white; font-weight:bold'>
-					<h1>Приветствую вас, ${_POST['user_name']}.</h1>
+					<h1>Приветствую вас, ${_POST['user_name']}{$contlog}.</h1>
 					<span>Вы зарегестрировались в планировщике задач. Для продолжения нажмите START</span>
 					<a href='../trello-clone.html' style='width:60px; background-color:#0af15f; display:block; margin:10px auto; padding:5px; font-family:auto;'>START</a>
 				</div>
