@@ -10,11 +10,12 @@
  */
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
+echo "file logs.php";
 if (include "/config/json-lib/logs.php"){
 	echo "logs - yes";
 }
 else{
-	$no = file_put_contents("/config/json-lib/logs.php",'<?php'.PHP_EOL);
+	$no = file_put_contents("./config/json-lib/logs.php",'<?php'.PHP_EOL);
 	echo $no;
 }
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
