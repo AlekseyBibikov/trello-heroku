@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
-include "./json-lib/logs.php";
+include "/config/json-lib/logs.php";
 
 	$_SESSION['name'] = $_POST['user_name']; 
 	$_SESSION['login'] = $_POST['email']; // сохраняем логин и пароль

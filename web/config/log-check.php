@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
-include "./json-lib/logs.php";
+include "/config/json-lib/logs.php";
 try {
 if (!isset($E["${_POST['email']}"])){
-	throw new Exception ('Неверный логин или пароль.');
+	throw new \Exception ('Неверный логин или пароль.');
 } 
 else if ($E["${_POST['email']}"][0] === $_POST['password']){
 	$_SESSION['name'] = $E["${_POST['email']}"][1]; 
@@ -22,7 +22,7 @@ echo "
 			<link href='../css/style.css' rel='stylesheet' type='text/css' />
 			<link href='../css/form.css' rel='stylesheet' type='text/css' />
 			<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap&subset=cyrillic-ext' rel='stylesheet'>
-			<link rel='icon' type='image/png' href='../icon.png'/>
+			<link rel='icon' type='image/png' href='./icon.png'/>
 		</head>
 		<body>
 			<div class='container'>
@@ -46,7 +46,7 @@ else{
 		<link href='../css/style.css' rel='stylesheet' type='text/css' />
 		<link href='../css/form.css' rel='stylesheet' type='text/css' />
 		<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap&subset=cyrillic-ext' rel='stylesheet'>
-		<link rel='icon' type='image/png' href='../icon.png'/>
+		<link rel='icon' type='image/png' href='./icon.png'/>
 	</head>
 	<body>
 		<div class='container'>
@@ -65,7 +65,7 @@ else{
 } 
 }
 
-catch (Exception $er){	
+catch (\Exception $er){	
 	echo "
 	<!DOCTYPE html>
 <html>
@@ -76,7 +76,7 @@ catch (Exception $er){
 		<link href='../css/style.css' rel='stylesheet' type='text/css' />
 		<link href='../css/form.css' rel='stylesheet' type='text/css' />
 		<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap&subset=cyrillic-ext' rel='stylesheet'>
-		<link rel='icon' type='image/png' href='../icon.png'/>
+		<link rel='icon' type='image/png' href='./icon.png'/>
 	</head>
 	<body>
 		<div class='container'>

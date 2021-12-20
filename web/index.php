@@ -10,6 +10,13 @@
  */
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
+if (include "/config/json-lib/logs.php"){
+	echo "logs - yes";
+}
+else{
+	$no = file_put_contents("/config/json-lib/logs.php",'<?php'.PHP_EOL);
+	echo $no;
+}
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	if (($_POST['login'] === $_SESSION['login'])&&($_POST['password'] === $_SESSION['password'])){
 		header("Location: trello-clone.html");

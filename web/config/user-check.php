@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
-include "./json-lib/logs.php";
+include "/config/json-lib/logs.php";
 $usWrite = $_GET; // Запрос браузера приходил в ключе ARRAY;
 foreach ($usWrite as $key => $value){
 		$str_j = str_replace("_"," ",$key);
