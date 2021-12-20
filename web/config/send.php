@@ -14,7 +14,6 @@ include "./logs.php";
 
 	echo "${contlog}";//контент перезаписывает файла logs.php
 	print_r($E);//но в переменную массива $E данные не поподают.
-	echo "'${contlog2}'";
 	// "
 	// <!DOCTYPE html>
 	// <html>

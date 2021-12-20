@@ -1,4 +1,4 @@
 vendor/
-web/config/json-lib/
-web/config/logs.php
+condig/logs.php
+json-lib/
 .env
