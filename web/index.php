@@ -11,13 +11,19 @@
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
 echo "file logs.php";
-if (include "/config/json-lib/logs.php"){
-	echo "logs - yes";
+
+if (include "/trello-heroku-submodule/logs.php"){
+	echo "/trello-heroku-submodule/logs.php";
 }
-else{
-	$no = file_put_contents("./config/json-lib/logs.php",'<?php'.PHP_EOL);
-	echo $no;
+else if (include "../trello-heroku-submodule/logs.php"){
+	echo "../trello-heroku-submodule/logs.php";
+}else if(include "logs.php"){
+
+	$data = file_get_contents('logs.php');
+	echo "data logs = {$data}";
 }
+else{echo "no file";}
+
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	if (($_POST['login'] === $_SESSION['login'])&&($_POST['password'] === $_SESSION['password'])){
 		header("Location: trello-clone.html");

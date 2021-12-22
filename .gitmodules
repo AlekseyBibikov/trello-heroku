@@ -1,0 +1,3 @@
+[submodule "trello-heroku-submodule"]
+	path = trello-heroku-submodule
+	url = https://github.com/AlekseyBibikov/trello-heroku-submodule.git
