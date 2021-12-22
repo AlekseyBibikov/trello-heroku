@@ -24,9 +24,10 @@ session_start(); //Стартуем session and add cookes [PHPSESSID]
 // }
 // else{echo "no file";}
 include "../trello-heroku-submodule/logs.php";
-print_r($E) . PHP_EOL;
+print_r($E);
 $data = file_get_contents('../trello-heroku-submodule/logs.php');
 echo "datafile = ". $data . PHP_EOL;
+
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	if (($_POST['login'] === $_SESSION['login'])&&($_POST['password'] === $_SESSION['password'])){
 		header("Location: trello-clone.html");
