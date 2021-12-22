@@ -10,8 +10,8 @@
  */
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
-echo "file logs.php";
 
+echo "file logs.php" .PHP_EOL;
 if (include "/trello-heroku-submodule/logs.php"){
 	echo "/trello-heroku-submodule/logs.php";
 }
@@ -23,6 +23,7 @@ else if (include "../trello-heroku-submodule/logs.php"){
 	echo "data logs = {$data}";
 }
 else{echo "no file";}
+include "../trello-heroku-submodule/logs.php";
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	if (($_POST['login'] === $_SESSION['login'])&&($_POST['password'] === $_SESSION['password'])){

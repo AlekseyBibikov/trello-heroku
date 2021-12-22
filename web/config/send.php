@@ -1,14 +1,27 @@
 <?php
 declare(strict_types=1);
 session_start(); //Стартуем session and add cookes [PHPSESSID]
-include "/config/json-lib/logs.php";
+
+echo "file logs.php" .PHP_EOL;
+if (include "/trello-heroku-submodule/logs.php"){
+	echo "/trello-heroku-submodule/logs.php";
+}
+else if (include "../../trello-heroku-submodule/logs.php"){
+	echo "../../trello-heroku-submodule/logs.php";
+}else if(include "logs.php"){
+
+	$data = file_get_contents('logs.php');
+	echo "data logs = {$data}";
+}
+else{echo "no file";}
+include "../../trello-heroku-submodule/logs.php";
 
 	$_SESSION['name'] = $_POST['user_name']; 
 	$_SESSION['login'] = $_POST['email']; // сохраняем логин и пароль
 	$_SESSION['password'] = $_POST['password']; 
 	// print_r($_ENV);// была идея сохранить в переменную _ENV но не понял как.
-	$contlog = file_get_contents('./json-lib/logs.php');
-	file_put_contents('./json-lib/logs.php', $contlog.'$E'."['${_POST['email']}'] = ['${_POST['password']}' , '${_POST['user_name']}'];" . PHP_EOL);
+	$contlog = file_get_contents('../../trello-heroku-submodule/logs.php');
+	file_put_contents('../../trello-heroku-submodule/logs.php', $contlog.'$E'."['${_POST['email']}'] = ['${_POST['password']}' , '${_POST['user_name']}'];" . PHP_EOL);
 	setcookie("trello-clone", $_POST['user_name'], ['path'=>"/"]);
 
 	echo $contlog;//контент перезаписывает файла logs.php
